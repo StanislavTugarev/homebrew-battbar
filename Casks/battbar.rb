@@ -1,8 +1,8 @@
 # Homebrew cask for battbar; rendered by scripts/update-cask.sh into the tap repository
 # StanislavTugarev/homebrew-battbar as Casks/battbar.rb.
 cask "battbar" do
-  version "0.1.0"
-  sha256 "ec79ffe422503a281837db6e94135cbf76687bef2ce59273d19b9112128d31ec"
+  version "0.2.0"
+  sha256 "4664056579e99aa83c6354b95318014ce577f689a49c35607463921d9a18ed31"
 
   url "https://github.com/StanislavTugarev/battbar/releases/download/v#{version}/battbar-#{version}.zip"
   name "battbar"
@@ -14,9 +14,15 @@ cask "battbar" do
   app "battbar.app"
   binary "#{appdir}/battbar.app/Contents/MacOS/battbar"
 
-  uninstall quit: "io.github.battbar"
+  # Quit the app and remove its "Open at Login" item (registered with SMAppService;
+  # System Events lists it by name). The app is not executed during uninstall.
+  uninstall quit:       "io.github.battbar",
+            login_item: "battbar"
 
-  zap trash: "~/.config/battbar"
+  zap trash: [
+    "~/.config/battbar",
+    "~/Library/Preferences/io.github.battbar.plist",
+  ]
 
   caveats <<~EOS
     battbar is signed with its own certificate but not notarized by Apple.
