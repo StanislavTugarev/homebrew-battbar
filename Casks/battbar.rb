@@ -9,7 +9,7 @@ cask "battbar" do
   desc "Menu bar battery indicators for wireless mice, keyboards and headsets"
   homepage "https://github.com/StanislavTugarev/battbar"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "battbar.app"
   binary "#{appdir}/battbar.app/Contents/MacOS/battbar"
@@ -23,5 +23,9 @@ cask "battbar" do
     The first start is blocked once ("battbar" Not Opened): click Done, then open
     System Settings > Privacy & Security, click "Open Anyway" next to battbar,
     confirm, and open battbar again.
+
+    Tap Trust: installing as StanislavTugarev/battbar/battbar trusted only this cask,
+    not the whole tap; `brew upgrade` keeps working. To trust it without installing:
+      brew trust --cask StanislavTugarev/battbar/battbar
   EOS
 end
