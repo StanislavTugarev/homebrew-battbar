@@ -1,7 +1,8 @@
-# Updated automatically by the release workflow of StanislavTugarev/battbar.
+# Homebrew cask for battbar; rendered by scripts/update-cask.sh into the tap repository
+# StanislavTugarev/homebrew-battbar as Casks/battbar.rb.
 cask "battbar" do
   version "0.1.0"
-  sha256 :no_check # set to the release checksum by the battbar release workflow
+  sha256 "ec79ffe422503a281837db6e94135cbf76687bef2ce59273d19b9112128d31ec"
 
   url "https://github.com/StanislavTugarev/battbar/releases/download/v#{version}/battbar-#{version}.zip"
   name "battbar"
