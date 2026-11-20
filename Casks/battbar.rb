@@ -1,8 +1,8 @@
 # Homebrew cask for battbar; rendered by scripts/update-cask.sh into the tap repository
 # StanislavTugarev/homebrew-battbar as Casks/battbar.rb.
 cask "battbar" do
-  version "0.2.0"
-  sha256 "4664056579e99aa83c6354b95318014ce577f689a49c35607463921d9a18ed31"
+  version "0.3.0"
+  sha256 "fc734fd4c92b36a6c3300c3de89c140b763109ce6e9582723dde313902394e56"
 
   url "https://github.com/StanislavTugarev/battbar/releases/download/v#{version}/battbar-#{version}.zip"
   name "battbar"
@@ -16,6 +16,8 @@ cask "battbar" do
 
   # Quit the app and remove its "Open at Login" item (registered with SMAppService;
   # System Events lists it by name). The app is not executed during uninstall.
+  # On `brew upgrade` Homebrew also runs `quit` (unless --no-quit) and reopens the app
+  # after replacing the bundle; `login_item` is skipped on upgrade, so the item stays.
   uninstall quit:       "io.github.battbar",
             login_item: "battbar"
 
