@@ -1,8 +1,8 @@
 # Homebrew cask for battbar; rendered by scripts/update-cask.sh into the tap repository
 # StanislavTugarev/homebrew-battbar as Casks/battbar.rb.
 cask "battbar" do
-  version "0.3.0"
-  sha256 "fc734fd4c92b36a6c3300c3de89c140b763109ce6e9582723dde313902394e56"
+  version "0.4.0"
+  sha256 "03f0c74bd9537f291dc71cc09e56a86fdb508071c7b6db84f5df6af039e7fb79"
 
   url "https://github.com/StanislavTugarev/battbar/releases/download/v#{version}/battbar-#{version}.zip"
   name "battbar"
